@@ -110,8 +110,8 @@ export default function EnergyLog() {
           </button>
         </div>
 
-        {/* Meals */}
-        {(["breakfast", "lunch", "dinner"] as (keyof EnergyData["meals"])[]).map((meal) => (
+        {/* Meals (loop updated with explicit typing) */}
+        {(["breakfast", "lunch", "dinner"] as Array<"breakfast" | "lunch" | "dinner">).map((meal) => (
           <div key={meal} className="ml-4 space-y-1">
             <button
               onClick={() => toggleTimestamped(meal)}
